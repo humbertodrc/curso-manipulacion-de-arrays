@@ -9,7 +9,11 @@
 <body>
   <div id="app"></div>
 
+
+
   <script>
+    const app = document.querySelector('#app');
+    /*
     const products = [
       { name: 'Apple', price: 100 },
       { name: 'Banana', price: 200 },
@@ -20,11 +24,39 @@
 
     products.forEach(product => {
       app.innerHTML += `
-      <ul>
         <li>${product.name} - ${product.price}</li>
-      </ul>
       `;
     })
+
+    const tasks = [
+      {title:"estudiar", realizado:true},
+      {title:"cocinar", realizado:false},
+      {title:"correr", realizado:false},
+      {title:"leer", realizado:true},
+    ];
+
+    const app = document.querySelector("#app");
+
+    tasks.forEach(task => {
+      app.innerHTML += `
+        <label>${task.title} <input type="checkbox" ${task.realizado ? 'checked' : ''} /> </label>
+      `
+    })
+    */
+
+    //Con Map
+    const products = [
+      { name: 'Apple', price: 100 },
+      { name: 'Banana', price: 200 },
+      { name: 'Orange', price: 300 },
+    ];
+
+    const list = products.map(product => {
+      return `<li>${product.name} - ${product.price}</li>`
+    })
+
+    //console.log(list.join(''));
+    app.innerHTML = list.join('')
 
   </script>
 </body>
