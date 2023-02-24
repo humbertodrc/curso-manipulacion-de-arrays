@@ -40,6 +40,23 @@ const orders = [
 	},
 ];
 
-console.log(letters, "antiguo array");
-console.log(newArray, "nuevo array");
-console.log(resultado);
+const totales = orders.map(item => item.total);
+
+const ordersWithTax = orders.map(item => {
+    // Modifica el original
+    // item.tax = .19;
+    // return item
+
+    return {
+        ...item,
+        tax: .19
+    }
+})
+
+// console.log(letters, "antiguo array");
+// console.log(newArray, "nuevo array");
+// console.log(resultado);
+console.log(orders);
+console.log(totales);
+console.log(ordersWithTax);
+
